@@ -1,9 +1,22 @@
-# 华炎魔方采购管理
+### 安装 yarn
+```
+npm i yarn -g
+```
 
-基于华炎魔方开发的采购管理模块。
+### 国内建议使用npm淘宝镜像
+```
+npm config set registry http://registry.npm.taobao.org/
+```
 
-## 数据库表
+### 使用yarn安装依赖包
+```
+yarn
+```
 
-- accounts 单位（客户/供应商）
-- products 产品（可用于销售/可用于采购）
-- product_type 产品分类
+### 启动服务器
+```
+yarn start
+```
+
+### 了解更多
+- [开发文档](https://steedos.github.io)
