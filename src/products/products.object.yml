@@ -12,6 +12,12 @@ fields:
   code:
     type: text
     label: 物料编码
+  unit:
+    type: text
+    label: 单位
+  price:
+    type: number
+    label: 单价
   description:
     type: textarea
     label: 描述
