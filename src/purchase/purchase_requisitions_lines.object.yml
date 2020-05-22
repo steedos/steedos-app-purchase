@@ -49,6 +49,7 @@ list_views:
       - product_code
       - name
       - product_description
+      - unit
       - product_qty
       - product_position
       - purchaser_note

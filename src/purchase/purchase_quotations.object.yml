@@ -73,13 +73,13 @@ list_views:
   all:
     label: 所有询价报价
     columns:
+      - state
       - name
       - partner_id
       - date_order
-      - user_id
       - amount_untaxed
       - amount_total
-      - state
+      - user_id
   rfq:
     label: 采购询价单
     columns:

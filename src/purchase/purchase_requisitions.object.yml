@@ -12,7 +12,7 @@ fields:
     index: true
   date_order:  
     type: date
-    label: 单据日期
+    label: 提出日期
   amount_qty:
     type: number
     label: 合计数量
@@ -44,15 +44,32 @@ list_views:
 
 relatedList:
   - purchase_requisitions_lines
-  - objectName: purchase_orders 
+  - objectName: purchase_quotations 
     columns: 
+      - state
       - name
       - partner_id
       - date_order
-      - user_id
       - amount_untaxed
       - amount_total
+      - user_id
+    filters: !!js/function | 
+      function(parentRecord) {
+        var name = parentRecord.name;
+        return [["name","=",name]]
+      }
+    sort: 
+      - - date_order
+        - asc
+  - objectName: purchase_orders 
+    columns: 
       - state
+      - name
+      - partner_id
+      - date_order
+      - amount_untaxed
+      - amount_total
+      - user_id
     filters: !!js/function | 
       function(parentRecord) {
         var name = parentRecord.name;

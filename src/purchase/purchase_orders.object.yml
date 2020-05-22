@@ -73,36 +73,13 @@ list_views:
   all:
     label: 所有采购订单
     columns:
+      - state
       - name
       - partner_id
       - date_order
+      - amount_untaxed
+      - amount_total
       - user_id
-      - amount_untaxed
-      - amount_total
-      - state
-  requisition:
-    label: 采购需求单
-    columns:
-      - name
-      - amount_qty
-      - state
-  rfq:
-    label: 采购询价单
-    columns:
-      - name
-      - partner_id
-      - amount_qty
-      - state
-  quotation:
-    label: 报价单
-    columns:
-      - name
-      - partner_id
-      - date_order
-      - amount_untaxed
-      - amount_total
-      - amount_qty
-      - state
   order:
     label: 采购订单
     columns:
