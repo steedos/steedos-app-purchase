@@ -12,29 +12,33 @@ fields:
   code:
     type: text
     label: 物料编码
-  unit:
-    type: text
-    label: 单位
   price:
     type: number
     label: 单价
+    scale: 2
+  unit:
+    type: text
+    label: 单位
   description:
     type: textarea
     label: 描述
     is_wide: true
   product_category:
     label: 物料分类
-    type: lookup
+    type: master_detail
     reference_to: product_category
     sortable: true
     filterable: true
     searchable: true
 list_views:
   all:
-    label: 所有分类
+    label: 所有物料
     columns:
       - name
-      - created
+      - code
+      - price
+      - unit
+      - product_category
 
 permission_set:
   user:

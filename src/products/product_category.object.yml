@@ -1,16 +1,16 @@
 name: product_category
-label: 产品分类
+label: 物料分类
 icon: contact
 enable_api: true
 fields:
   name:
     type: text
-    label: 名称
+    label: 分类名称
     required: true
     searchable: true
     index: true
   # 此字段需要自动计算
-  complete_name:
+  full_name:
     type: text
     label: 完整名称
     omit: true
