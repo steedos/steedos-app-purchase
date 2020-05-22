@@ -1,0 +1,116 @@
+name: purchase_quotations_lines
+label: 询价报价明细
+icon: contact
+enable_api: true
+fields:
+  order_id:
+    label: 采购订单
+    type: master_detail
+    reference_to: purchase_quotations
+    sortable: true
+    filterable: true
+    searchable: true
+  product_id:
+    label: 物料
+    type: lookup
+    reference_to: products
+    sortable: true
+    filterable: true
+    searchable: true
+  product_code:
+    type: text
+    label: 物料编码
+    omit: true 
+  name:
+    type: text
+    label: 物料名称
+    required: true
+    searchable: true
+  product_description:
+    type: text
+    label: 规格型号参数等
+  unit:
+    type: text
+    label: 单位
+  product_qty:
+    type: number
+    label: 数量
+  price_unit:
+    type: currency
+    label: 单价(含税)
+  price_unit_excluding_tax:
+    type: currency
+    label: 单价(不含税)
+  tax_rate:
+    type: number
+    label: 税率%
+  tax:
+    type: currency
+    label: 税额
+  price_subtotal:
+    type: currency
+    label: 金额(含税)
+  price_subtotal_excluding_tax:
+    type: currency
+    label: 金额(不含税)
+  product_position:
+    type: text
+    label: 摆放位置
+  purchaser_note:
+    type: text
+    label: 备注
+  supplier_note:
+    type: text
+    label: 供应商备注
+
+list_views:
+  all:
+    label: 所有明细
+    columns:
+      - product_code
+      - product_id
+      - name
+      - product_description
+      - product_qty
+      - product_position
+      - purchaser_note
+  rfq:
+    label: 采购询价单明细
+    columns:
+      - product_code
+      - product_id
+      - name
+      - product_description
+      - product_qty
+      - purchaser_note
+  quotation:
+    label: 报价单明细
+    columns:
+      - product_code
+      - product_id
+      - name
+      - product_description
+      - product_qty
+      - price_unit
+      - price_unit_excluding_tax
+      - tax_rate
+      - tax
+      - price_subtotal
+      - price_subtotal_excluding_tax
+      - supplier_note
+
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true 
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

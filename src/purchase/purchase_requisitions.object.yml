@@ -1,0 +1,79 @@
+name: purchase_requisitions
+label: 采购需求
+icon: contact
+enable_api: true
+fields:
+  name:
+    type: text
+    label: 单号
+    required: true
+    searchable: true
+    filterable: true
+    index: true
+  date_order:  
+    type: date
+    label: 单据日期
+  amount_qty:
+    type: number
+    label: 合计数量
+    omit: true
+  state:
+    label: 状态
+    type: select
+    sortable: true
+    options:
+      - label: 待询价
+        value: draft
+      - label: 已询价
+        value: sent
+    defaultValue: draft
+    filterable: true
+  owner:
+    label: 编制
+
+list_views:
+  all:
+    label: 所有
+    columns:
+      - name
+      - date_order
+      - user_id
+      - amount_qty
+      - state
+      - owner
+
+relatedList:
+  - purchase_requisitions_lines
+  - objectName: purchase_orders 
+    columns: 
+      - name
+      - partner_id
+      - date_order
+      - user_id
+      - amount_untaxed
+      - amount_total
+      - state
+    filters: !!js/function | 
+      function(parentRecord) {
+        var name = parentRecord.name;
+        return [["name","=",name]]
+      }
+    sort: 
+      - - date_order
+        - asc
+
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true 
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

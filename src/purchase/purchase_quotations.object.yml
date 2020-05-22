@@ -1,0 +1,116 @@
+name: purchase_quotations
+label: 询价报价
+icon: contact
+enable_api: true
+fields:
+  name:
+    type: text
+    label: 单号
+    required: true
+    searchable: true
+    filterable: true
+    index: true
+  partner_id:
+    label: 供应商
+    type: lookup
+    reference_to: accounts
+    sortable: true
+    filterable: true
+    searchable: true
+  date_order:  
+    type: date
+    label: 单据日期
+  date_planned: 
+    type: date
+    label: 接收日期
+  date_approve: 
+    type: date
+    label: 确认日期
+    omit: true
+  user_id:
+    label: 采购员
+    type: lookup
+    reference_to: users
+    sortable: true
+    filterable: true
+    searchable: true
+  state:
+    label: 状态
+    type: select
+    sortable: true
+    options:
+      - label: 询价单
+        value: draft
+      - label: 发送询价单
+        value: sent
+      - label: To Approve
+        value: to approve
+      - label: 采购订单
+        value: purchase
+      - label: 已锁定
+        value: done
+      - label: 已取消
+        value: cancel
+    filterable: true
+  amount_untaxed:
+    label: 未税金额
+    type: currency
+    omit: true 
+  amount_tax:
+    label: 税金
+    type: currency
+    omit: true 
+  amount_total:
+    label: 合计金额
+    type: currency
+    omit: true
+  amount_qty:
+    type: number
+    label: 合计数量
+    omit: true
+
+list_views:
+  all:
+    label: 所有询价报价
+    columns:
+      - name
+      - partner_id
+      - date_order
+      - user_id
+      - amount_untaxed
+      - amount_total
+      - state
+  rfq:
+    label: 采购询价单
+    columns:
+      - name
+      - partner_id
+      - amount_qty
+      - state
+  quotation:
+    label: 报价单
+    columns:
+      - name
+      - partner_id
+      - date_order
+      - amount_untaxed
+      - amount_total
+      - amount_qty
+      - state
+
+
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true 
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true

@@ -1,48 +1,57 @@
-name: purchase_order_line
-label: 采购订单明细
+name: purchase_requisitions_lines
+label: 采购需求明细
 icon: contact
 enable_api: true
 fields:
   order_id:
-    label: 采购订单
+    label: 采购需求
     type: master_detail
-    reference_to: purchase_order
+    reference_to: purchase_requisitions
     sortable: true
     filterable: true
     searchable: true
   product_id:
-    label: 产品
+    label: 物料
     type: lookup
     reference_to: products
     sortable: true
     filterable: true
     searchable: true
+  product_code:
+    type: text
+    label: 物料编码
+    omit: true 
   name:
     type: text
-    label: 说明
+    label: 物料名称
     required: true
     searchable: true
+  product_description:
+    type: text
+    label: 规格、型号参数或图纸尺寸(描述)
+  unit:
+    type: text
+    label: 单位
   product_qty:
     type: number
-    label: 数量
-    searchable: true
-  price_unit:
-    type: currency
-    label: 单价
-    searchable: true
-  price_subtotal:
-    type: currency
-    label: 小计
-    searchable: true
+    label: 需求数量
+  product_position:
+    type: text
+    label: 摆放位置
+  purchaser_note:
+    type: text
+    label: 备注
+
 list_views:
   all:
-    label: 所有分类
+    label: 所有
     columns:
-      - product_id
+      - product_code
       - name
+      - product_description
       - product_qty
-      - price_unit
-      - price_subtotal
+      - product_position
+      - purchaser_note
 
 permission_set:
   user:

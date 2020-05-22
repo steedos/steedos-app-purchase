@@ -1,13 +1,14 @@
-name: purchase_order
+name: purchase_orders
 label: 采购订单
 icon: contact
 enable_api: true
 fields:
   name:
     type: text
-    label: 名称
+    label: 单号
     required: true
     searchable: true
+    filterable: true
     index: true
   partner_id:
     label: 供应商
@@ -54,30 +55,66 @@ fields:
   amount_untaxed:
     label: 未税金额
     type: currency
-    filterable: true
     omit: true 
   amount_tax:
     label: 税金
     type: currency
-    filterable: true
     omit: true 
   amount_total:
-    label: 合计
+    label: 合计金额
     type: currency
-    filterable: true
+    omit: true
+  amount_qty:
+    type: number
+    label: 合计数量
     omit: true
 
 list_views:
   all:
-    label: 所有分类
+    label: 所有采购订单
     columns:
       - name
-      - date_order
       - partner_id
+      - date_order
       - user_id
       - amount_untaxed
       - amount_total
       - state
+  requisition:
+    label: 采购需求单
+    columns:
+      - name
+      - amount_qty
+      - state
+  rfq:
+    label: 采购询价单
+    columns:
+      - name
+      - partner_id
+      - amount_qty
+      - state
+  quotation:
+    label: 报价单
+    columns:
+      - name
+      - partner_id
+      - date_order
+      - amount_untaxed
+      - amount_total
+      - amount_qty
+      - state
+  order:
+    label: 采购订单
+    columns:
+      - name
+      - partner_id
+      - user_id
+      - date_approve
+      - amount_untaxed
+      - amount_total
+      - amount_qty
+      - state
+
 
 permission_set:
   user:
