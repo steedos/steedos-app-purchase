@@ -4,13 +4,9 @@ description: 审批、文档、公告、通讯录、任务、日程。
 icon_slds: approval
 is_creator: true
 objects: 
+  - accounts
+  - contacts
+  - product_category
   - instances
-  - tasks
-  - events
-mobile_objects: 
-  - instances
-  - cms_posts
-  - announcements
-  - space_users
   - tasks
   - events

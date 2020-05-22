@@ -12,8 +12,6 @@
 
 **/.vscode/launch.*
 
-**/yarn.lock
-
 .DS_Store
 
 steedos-config.yml

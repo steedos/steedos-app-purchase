@@ -1,0 +1,53 @@
+name: product_category
+label: 产品分类
+icon: contact
+enable_api: true
+fields:
+  name:
+    type: text
+    label: 名称
+    required: true
+    searchable: true
+    index: true
+  complete_name:
+    type: text
+    label: 完整名称
+  description:
+    type: textarea
+    label: 描述
+    is_wide: true
+  parent_id:
+    label: 上级分类
+    type: lookup
+    reference_to: product_category
+    sortable: true
+    filterable: true
+    searchable: true
+  product_count:
+    type: number
+    label: 产品数量
+    inlineHelpText: The number of products under this category (Does not consider the children categories)
+
+list_views:
+  all:
+    label: 所有分类
+    columns:
+      - name
+      - parent_id
+      - created
+
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true 
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
