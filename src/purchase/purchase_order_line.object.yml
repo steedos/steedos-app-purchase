@@ -1,0 +1,61 @@
+name: purchase_order_line
+label: 采购订单明细
+icon: contact
+enable_api: true
+fields:
+  order_id:
+    label: 采购订单
+    type: master_detail
+    reference_to: purchase_order
+    sortable: true
+    filterable: true
+    searchable: true
+  product_id:
+    label: 产品
+    type: lookup
+    reference_to: products
+    sortable: true
+    filterable: true
+    searchable: true
+  name:
+    type: text
+    label: 说明
+    required: true
+    searchable: true
+  product_qty:
+    type: number
+    label: 数量
+    searchable: true
+  price_unit:
+    type: currency
+    label: 单价
+    searchable: true
+  price_subtotal:
+    type: currency
+    label: 小计
+    searchable: true
+list_views:
+  all:
+    label: 所有分类
+    columns:
+      - product_id
+      - name
+      - product_qty
+      - price_unit
+      - price_subtotal
+
+permission_set:
+  user:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true 
+  admin:
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: true
+    viewAllRecords: true
