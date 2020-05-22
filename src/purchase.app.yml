@@ -5,8 +5,7 @@ icon_slds: approval
 is_creator: true
 objects: 
   - accounts
-  - contacts
-  - product_category
+  - products
   - instances
   - tasks
   - events
