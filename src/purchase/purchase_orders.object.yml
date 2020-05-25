@@ -4,12 +4,14 @@ icon: contact
 enable_api: true
 fields:
   name:
-    type: text
+    type: autonumber
+    formula: "PO{00000}"
     label: 单号
-    required: true
     searchable: true
     filterable: true
     index: true
+    omit: true
+    readonly: true
   partner_id:
     label: 供应商
     type: lookup
