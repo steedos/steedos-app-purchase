@@ -2,35 +2,28 @@ name: purchase_quotations
 label: 询价报价
 icon: contact
 enable_api: true
+enable_files: true
 fields:
   name:
-    type: text
+    type: autonumber
+    formula: "RFQ{00000}"
     label: 单号
-    required: true
     searchable: true
     filterable: true
     index: true
+    omit: true
+    readonly: true
+  requisition_id:
+    label: 采购需求
+    type: master_detail
+    reference_to: purchase_requisitions
+    sortable: true
+    filterable: true
+    searchable: true
   partner_id:
     label: 供应商
     type: lookup
     reference_to: accounts
-    sortable: true
-    filterable: true
-    searchable: true
-  date_order:  
-    type: date
-    label: 单据日期
-  date_planned: 
-    type: date
-    label: 接收日期
-  date_approve: 
-    type: date
-    label: 确认日期
-    omit: true
-  user_id:
-    label: 采购员
-    type: lookup
-    reference_to: users
     sortable: true
     filterable: true
     searchable: true
@@ -39,19 +32,29 @@ fields:
     type: select
     sortable: true
     options:
-      - label: 待发送的询价单
-        value: draft
-      - label: 已发送的询价单
-        value: sent
-      - label: 已接收的报价单
-        value: to approve
-      - label: 已转为采购订单
+      - label: 待报价
+        value: RFQ
+      - label: 报价中
+        value: quoting
+      - label: 已报价
+        value: quoted
+      - label: 已成交
         value: purchase
-      - label: 已锁定
-        value: done
       - label: 已取消
         value: cancel
     filterable: true
+    defaultValue: RFQ
+  user_id:
+    label: 采购员
+    type: lookup
+    reference_to: users
+    sortable: true
+    filterable: true
+    searchable: true
+  quotation_date: 
+    type: date
+    label: 报价日期
+    omit: true
   amount_untaxed:
     label: 未税金额
     type: currency
@@ -68,7 +71,6 @@ fields:
     type: number
     label: 合计数量
     omit: true
-
 list_views:
   all:
     label: 所有询价报价
@@ -76,27 +78,47 @@ list_views:
       - state
       - name
       - partner_id
-      - date_order
+      - created
+      - quotation_date
+      - amount_qty
       - amount_untaxed
       - amount_total
       - user_id
   rfq:
-    label: 采购询价单
+    label: 待报价
+    filters: [["state", "=", "RFQ"]]
     columns:
-      - name
-      - partner_id
-      - amount_qty
       - state
-  quotation:
-    label: 报价单
-    columns:
       - name
       - partner_id
-      - date_order
+      - created
+      - amount_qty
+      - user_id
+  quoting:
+    label: 报价中
+    filters: [["state", "=", "quoting"]]
+    columns:
+      - state
+      - name
+      - partner_id
+      - created
+      - amount_qty
       - amount_untaxed
       - amount_total
-      - amount_qty
+      - user_id
+  quoted:
+    label: 已报价
+    filters: [["state", "=", "quoted"]]
+    columns:
       - state
+      - name
+      - partner_id
+      - created
+      - quotation_date
+      - amount_qty
+      - amount_untaxed
+      - amount_total
+      - user_id
 relatedList:
   - purchase_quotations_lines
   - objectName: purchase_orders 
@@ -116,6 +138,19 @@ relatedList:
     sort: 
       - - date_order
         - asc
+actions:
+  printRFQ: 
+      label: "打印询价单" 
+  emailRFQ: 
+      label: "发送邮件" 
+  openQuotation: 
+      label: "开启自助报价" 
+  printPQ: 
+      label: "打印报价单" 
+  confirmQuotation: 
+      label: "完成自助报价"
+  exportPR: 
+      label: "生成采购申请单"        
 permission_set:
   user:
     allowCreate: false

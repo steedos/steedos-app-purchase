@@ -2,6 +2,7 @@ name: purchase_quotations_lines
 label: 询价报价明细
 icon: contact
 enable_api: true
+enable_audit: true
 fields:
   order_id:
     label: 采购订单
@@ -21,11 +22,6 @@ fields:
     type: text
     label: 物料编码
     omit: true 
-  name:
-    type: text
-    label: 物料名称
-    required: true
-    searchable: true
   product_description:
     type: text
     label: 规格(品牌)
@@ -53,9 +49,6 @@ fields:
   price_subtotal_excluding_tax:
     type: currency
     label: 金额(不含税)
-  product_position:
-    type: text
-    label: 摆放位置
   purchaser_note:
     type: text
     label: 备注
@@ -69,7 +62,6 @@ list_views:
     columns:
       - product_code
       - product_id
-      - name
       - product_description
       - unit
       - product_qty
@@ -85,7 +77,6 @@ list_views:
     columns:
       - product_code
       - product_id
-      - name
       - product_description
       - unit
       - product_qty
@@ -94,7 +85,6 @@ list_views:
     label: 报价单明细
     columns:
       - product_code
-      - name
       - product_description
       - unit
       - product_qty
