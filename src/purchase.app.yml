@@ -4,12 +4,11 @@ description: 审批、文档、公告、通讯录、任务、日程。
 icon_slds: approval
 is_creator: true
 objects: 
-  - purchase_order
-  - accounts
-  - products
   - purchase_requisitions
   - purchase_quotations
   - purchase_orders
+  - accounts
+  - products
   - instances
   - tasks
   - events

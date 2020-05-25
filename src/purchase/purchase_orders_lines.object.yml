@@ -28,7 +28,7 @@ fields:
     searchable: true
   product_description:
     type: text
-    label: 规格型号参数等
+    label: 规格(品牌)
   unit:
     type: text
     label: 单位
@@ -62,6 +62,12 @@ fields:
   supplier_note:
     type: text
     label: 供应商备注
+  required_delivery_date:  
+    type: date
+    label: 要求交货日期
+  confirmed_delivery_date: 
+    type: date
+    label: 确认交货日期
 
 list_views:
   all:
@@ -70,44 +76,12 @@ list_views:
       - product_code
       - product_id
       - name
-      - product_description
-      - product_qty
-      - product_position
-      - purchaser_note
-  requisition:
-    label: 采购需求单明细
-    columns:
-      - product_code
-      - product_id
-      - name
-      - product_description
-      - product_qty
-      - product_position
-      - purchaser_note
-  rfq:
-    label: 采购询价单明细
-    columns:
-      - product_code
-      - product_id
-      - name
-      - product_description
-      - product_qty
-      - purchaser_note
-  quotation:
-    label: 报价单明细
-    columns:
-      - product_code
-      - product_id
-      - name
-      - product_description
+      - unit
       - product_qty
       - price_unit
-      - price_unit_excluding_tax
-      - tax_rate
-      - tax
       - price_subtotal
-      - price_subtotal_excluding_tax
-      - supplier_note
+      - required_delivery_date
+      - confirmed_delivery_date
   order:
     label: 采购订单明细
     columns:

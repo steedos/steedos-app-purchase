@@ -21,14 +21,9 @@ fields:
     type: text
     label: 物料编码
     omit: true 
-  name:
-    type: text
-    label: 物料名称
-    required: true
-    searchable: true
   product_description:
     type: text
-    label: 规格、型号参数或图纸尺寸(描述)
+    label: 规格
   unit:
     type: text
     label: 单位
@@ -47,7 +42,7 @@ list_views:
     label: 所有
     columns:
       - product_code
-      - name
+      - product_id
       - product_description
       - unit
       - product_qty

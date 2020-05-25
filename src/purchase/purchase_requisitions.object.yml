@@ -4,15 +4,14 @@ icon: contact
 enable_api: true
 fields:
   name:
-    type: text
+    type: autonumber
+    formula: "PO{00000}"
     label: 单号
-    required: true
     searchable: true
     filterable: true
     index: true
-  date_order:  
-    type: date
-    label: 提出日期
+    omit: true
+    readonly: true
   amount_qty:
     type: number
     label: 合计数量
@@ -35,11 +34,11 @@ list_views:
   all:
     label: 所有
     columns:
+      - state
       - name
-      - date_order
+      - created
       - user_id
       - amount_qty
-      - state
       - owner
 
 relatedList:

@@ -28,7 +28,7 @@ fields:
     searchable: true
   product_description:
     type: text
-    label: 规格型号参数等
+    label: 规格(品牌)
   unit:
     type: text
     label: 单位
@@ -71,9 +71,15 @@ list_views:
       - product_id
       - name
       - product_description
+      - unit
       - product_qty
-      - product_position
-      - purchaser_note
+      - price_unit
+      - price_unit_excluding_tax
+      - tax_rate
+      - tax
+      - price_subtotal
+      - price_subtotal_excluding_tax
+      - supplier_note
   rfq:
     label: 采购询价单明细
     columns:
@@ -81,15 +87,16 @@ list_views:
       - product_id
       - name
       - product_description
+      - unit
       - product_qty
       - purchaser_note
   quotation:
     label: 报价单明细
     columns:
       - product_code
-      - product_id
       - name
       - product_description
+      - unit
       - product_qty
       - price_unit
       - price_unit_excluding_tax
