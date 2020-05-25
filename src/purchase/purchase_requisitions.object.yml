@@ -5,7 +5,7 @@ enable_api: true
 fields:
   name:
     type: autonumber
-    formula: "PO{00000}"
+    formula: "PR{00000}"
     label: 单号
     searchable: true
     filterable: true
@@ -48,14 +48,14 @@ relatedList:
       - state
       - name
       - partner_id
-      - date_order
+      - quotation_date
       - amount_untaxed
       - amount_total
       - user_id
     filters: !!js/function | 
       function(parentRecord) {
-        var name = parentRecord.name;
-        return [["name","=",name]]
+        var id = parentRecord._id;
+        return [["requisition_id","=",id]]
       }
     sort: 
       - - date_order
@@ -77,6 +77,10 @@ relatedList:
     sort: 
       - - date_order
         - asc
+
+actions:
+  printPR: 
+      label: "打印需求单"
 
 permission_set:
   user:
