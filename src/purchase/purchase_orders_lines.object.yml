@@ -3,7 +3,7 @@ label: 采购订单明细
 icon: contact
 enable_api: true
 fields:
-  order_id:
+  parent_id:
     label: 采购订单
     type: master_detail
     reference_to: purchase_orders
@@ -48,15 +48,6 @@ fields:
   price_subtotal_excluding_tax:
     type: currency
     label: 金额(不含税)
-  product_position:
-    type: text
-    label: 摆放位置
-  purchaser_note:
-    type: text
-    label: 备注
-  supplier_note:
-    type: text
-    label: 供应商备注
   required_delivery_date:  
     type: date
     label: 要求交货日期

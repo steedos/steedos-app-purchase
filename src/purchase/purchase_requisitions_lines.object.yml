@@ -3,7 +3,7 @@ label: 采购需求明细
 icon: contact
 enable_api: true
 fields:
-  order_id:
+  parent_id:
     label: 采购需求
     type: master_detail
     reference_to: purchase_requisitions
@@ -39,7 +39,7 @@ fields:
 
 list_views:
   all:
-    label: 所有
+    label: 所有明细
     columns:
       - product_code
       - product_id
