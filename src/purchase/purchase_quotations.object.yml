@@ -117,6 +117,31 @@ list_views:
       - amount_untaxed
       - amount_total
       - owner
+  my_quoting:
+    label: 我的报价单：报价中
+    filters: [["state", "=", "quoting"]]
+    columns:
+      - state
+      - name
+      - partner_id
+      - created
+      - amount_qty
+      - amount_untaxed
+      - amount_total
+      - owner
+  my_quoted:
+    label: 我的报价单：已报价
+    filters: [["state", "=", "quoted"]]
+    columns:
+      - state
+      - name
+      - partner_id
+      - created
+      - quotation_date
+      - amount_qty
+      - amount_untaxed
+      - amount_total
+      - owner
 relatedList:
   - purchase_quotations_lines
   - objectName: purchase_orders 
@@ -137,14 +162,14 @@ relatedList:
       - - date_order
         - asc
 actions:
-  printRFQ: 
-      label: "打印询价单" 
-  emailRFQ: 
-      label: "发送邮件" 
+  #printRFQ: 
+  #    label: "打印询价单" 
+  #emailRFQ: 
+  #    label: "发送邮件" 
   openQuotation: 
       label: "开启自助报价" 
-  printPQ: 
-      label: "打印报价单" 
+  #printPQ: 
+  #    label: "打印报价单" 
   confirmQuotation: 
       label: "完成自助报价"
   exportPR: 
