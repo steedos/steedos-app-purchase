@@ -65,14 +65,14 @@ relatedList:
       - state
       - name
       - partner_id
-      - date_order
+      - order_date
       - amount_untaxed
       - amount_total
       - user_id
     filters: !!js/function | 
       function(parentRecord) {
-        var name = parentRecord.name;
-        return [["name","=",name]]
+        var id = parentRecord._id;
+        return [["requisition_id","=",id]]
       }
     sort: 
       - - date_order

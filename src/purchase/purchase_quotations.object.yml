@@ -2,6 +2,7 @@ name: purchase_quotations
 label: 询价报价
 icon: contact
 enable_api: true
+enable_audit: true
 enable_files: true
 fields:
   name:
@@ -54,6 +55,10 @@ fields:
   quotation_date: 
     type: date
     label: 报价日期
+    omit: true
+  order_date: 
+    type: date
+    label: 订单日期
     omit: true
   amount_untaxed:
     label: 未税金额
@@ -126,14 +131,14 @@ relatedList:
       - state
       - name
       - partner_id
-      - date_order
+      - order_date
       - amount_untaxed
       - amount_total
       - user_id
     filters: !!js/function | 
       function(parentRecord) {
-        var name = parentRecord.name;
-        return [["name","=",name]]
+        var id = parentRecord._id;
+        return [["quotation_id","=",id]]
       }
     sort: 
       - - date_order

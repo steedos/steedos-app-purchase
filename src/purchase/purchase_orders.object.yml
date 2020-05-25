@@ -12,27 +12,25 @@ fields:
     index: true
     omit: true
     readonly: true
+  requisition_id:
+    label: 采购需求
+    type: lookup
+    reference_to: purchase_requisitions
+    sortable: true
+    filterable: true
+    searchable: true
+    #omit: true
+  quotation_id:
+    label: 采购报价
+    type: lookup
+    reference_to: purchase_quotations
+    sortable: true
+    filterable: true
+    searchable: true
   partner_id:
     label: 供应商
     type: lookup
     reference_to: accounts
-    sortable: true
-    filterable: true
-    searchable: true
-  date_order:  
-    type: date
-    label: 单据日期
-  date_planned: 
-    type: date
-    label: 接收日期
-  date_approve: 
-    type: date
-    label: 确认日期
-    omit: true
-  user_id:
-    label: 采购员
-    type: lookup
-    reference_to: users
     sortable: true
     filterable: true
     searchable: true
@@ -41,19 +39,25 @@ fields:
     type: select
     sortable: true
     options:
-      - label: 询价单
-        value: draft
-      - label: 发送询价单
-        value: sent
-      - label: To Approve
-        value: to approve
-      - label: 采购订单
-        value: purchase
-      - label: 已锁定
-        value: done
-      - label: 已取消
-        value: cancel
+      - label: 待验收
+        value: waiting
+      - label: 已验收
+        value: accepted
+      - label: 退换处理中
+        value: return
     filterable: true
+    defaultValue: waiting
+  user_id:
+    label: 采购员
+    type: lookup
+    reference_to: users
+    sortable: true
+    filterable: true
+    searchable: true
+  order_date: 
+    type: date
+    label: 订单日期
+    omit: true
   amount_untaxed:
     label: 未税金额
     type: currency
@@ -70,7 +74,6 @@ fields:
     type: number
     label: 合计数量
     omit: true
-
 list_views:
   all:
     label: 所有采购订单
@@ -78,23 +81,24 @@ list_views:
       - state
       - name
       - partner_id
-      - date_order
-      - amount_untaxed
-      - amount_total
-      - user_id
-  order:
-    label: 采购订单
-    columns:
-      - name
-      - partner_id
-      - user_id
-      - date_approve
-      - amount_untaxed
-      - amount_total
+      - created
+      - order_date
       - amount_qty
-      - state
-
-
+      - amount_untaxed
+      - amount_total
+      - user_id
+  waiting:
+    label: 待验收
+    filters: [["state", "=", "waiting"]]
+  accepted:
+    label: 已验收
+    filters: [["state", "=", "accepted"]]
+  return:
+    label: 退换处理中
+    filters: [["state", "=", "return"]]
+actions:
+  initiateAcceptance: 
+      label: "发起验收" 
 permission_set:
   user:
     allowCreate: false

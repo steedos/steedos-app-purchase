@@ -21,11 +21,6 @@ fields:
     type: text
     label: 物料编码
     omit: true 
-  name:
-    type: text
-    label: 物料名称
-    required: true
-    searchable: true
   product_description:
     type: text
     label: 规格(品牌)
@@ -75,28 +70,12 @@ list_views:
     columns:
       - product_code
       - product_id
-      - name
       - unit
       - product_qty
       - price_unit
       - price_subtotal
       - required_delivery_date
       - confirmed_delivery_date
-  order:
-    label: 采购订单明细
-    columns:
-      - product_code
-      - product_id
-      - name
-      - product_description
-      - product_qty
-      - price_unit
-      - price_unit_excluding_tax
-      - tax_rate
-      - tax
-      - price_subtotal
-      - price_subtotal_excluding_tax
-      - supplier_note
 
 permission_set:
   user:
