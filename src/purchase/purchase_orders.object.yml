@@ -47,13 +47,6 @@ fields:
         value: return
     filterable: true
     defaultValue: waiting
-  user_id:
-    label: 采购员
-    type: lookup
-    reference_to: users
-    sortable: true
-    filterable: true
-    searchable: true
   order_date: 
     type: date
     label: 订单日期
@@ -86,7 +79,7 @@ list_views:
       - amount_qty
       - amount_untaxed
       - amount_total
-      - user_id
+      - owner
   waiting:
     label: 待验收
     filters: [["state", "=", "waiting"]]

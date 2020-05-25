@@ -37,7 +37,6 @@ list_views:
       - state
       - name
       - created
-      - user_id
       - amount_qty
       - owner
 
@@ -51,7 +50,7 @@ relatedList:
       - quotation_date
       - amount_untaxed
       - amount_total
-      - user_id
+      - owner
     filters: !!js/function | 
       function(parentRecord) {
         var id = parentRecord._id;
@@ -68,7 +67,7 @@ relatedList:
       - order_date
       - amount_untaxed
       - amount_total
-      - user_id
+      - owner
     filters: !!js/function | 
       function(parentRecord) {
         var id = parentRecord._id;

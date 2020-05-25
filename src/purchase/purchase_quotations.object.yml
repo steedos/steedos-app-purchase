@@ -45,13 +45,6 @@ fields:
         value: cancel
     filterable: true
     defaultValue: RFQ
-  user_id:
-    label: 采购员
-    type: lookup
-    reference_to: users
-    sortable: true
-    filterable: true
-    searchable: true
   quotation_date: 
     type: date
     label: 报价日期
@@ -88,7 +81,7 @@ list_views:
       - amount_qty
       - amount_untaxed
       - amount_total
-      - user_id
+      - owner
   rfq:
     label: 待报价
     filters: [["state", "=", "RFQ"]]
@@ -98,7 +91,7 @@ list_views:
       - partner_id
       - created
       - amount_qty
-      - user_id
+      - owner
   quoting:
     label: 报价中
     filters: [["state", "=", "quoting"]]
@@ -110,7 +103,7 @@ list_views:
       - amount_qty
       - amount_untaxed
       - amount_total
-      - user_id
+      - owner
   quoted:
     label: 已报价
     filters: [["state", "=", "quoted"]]
@@ -123,7 +116,7 @@ list_views:
       - amount_qty
       - amount_untaxed
       - amount_total
-      - user_id
+      - owner
 relatedList:
   - purchase_quotations_lines
   - objectName: purchase_orders 
@@ -134,7 +127,7 @@ relatedList:
       - order_date
       - amount_untaxed
       - amount_total
-      - user_id
+      - owner
     filters: !!js/function | 
       function(parentRecord) {
         var id = parentRecord._id;
