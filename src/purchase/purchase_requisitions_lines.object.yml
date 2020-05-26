@@ -24,9 +24,11 @@ fields:
   product_description:
     type: text
     label: 规格
+    omit: true 
   unit:
     type: text
     label: 单位
+    omit: true 
   product_qty:
     type: number
     label: 需求数量
