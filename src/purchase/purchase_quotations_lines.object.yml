@@ -5,7 +5,7 @@ enable_api: true
 enable_audit: true
 fields:
   parent_id:
-    label: 采购订单
+    label: 询价报价
     type: master_detail
     reference_to: purchase_quotations
     sortable: true
