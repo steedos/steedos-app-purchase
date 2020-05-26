@@ -16,7 +16,7 @@ fields:
     readonly: true
   requisition_id:
     label: 采购需求
-    type: master_detail
+    type: lookup
     reference_to: purchase_requisitions
     sortable: true
     filterable: true
