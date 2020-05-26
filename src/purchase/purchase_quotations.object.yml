@@ -151,11 +151,11 @@ actions:
   #emailRFQ: 
   #    label: "发送邮件" 
   openQuotation: 
-      label: "开启自助报价" 
+      label: "通知供应商" 
   #printPQ: 
   #    label: "打印报价单" 
   confirmQuotation: 
-      label: "完成自助报价"
+      label: "报价完成"
   exportPR: 
       label: "生成采购申请单"        
 permission_set:
