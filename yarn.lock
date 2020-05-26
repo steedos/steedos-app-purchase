@@ -968,10 +968,10 @@
   resolved "https://registry.yarnpkg.com/@steedos/standard-objects/-/standard-objects-1.20.0.tgz#dd0c6da323a6182171b16652d5e57fec98a89d14"
   integrity sha512-0UGz1abJVBqGGxmWlvaS8KbRCzxl7EpOIY/NgXeIxvSXhIIj2eFs7IuRNXNIrzVWuOtg8ykxIDhZVcyov1HDMg==
 
-"@steedos/steedos-plugin-workflow@^2.0.3":
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/@steedos/steedos-plugin-workflow/-/steedos-plugin-workflow-2.0.7.tgz#153b028d7c86f0941c37245f4c1591ddd6fd9e2f"
-  integrity sha512-IH7vhlb7E5646keiGL05SIiflC3GCEEFQabRGM+hjHMHrAn4wPVhPFol4Pr9BaHeLkv5U5YZxlSW4UIm9+xd7A==
+"@steedos/steedos-plugin-workflow@^2.0.8":
+  version "2.0.8"
+  resolved "https://registry.npm.taobao.org/@steedos/steedos-plugin-workflow/download/@steedos/steedos-plugin-workflow-2.0.8.tgz#7614b762710fa7262816bb5a817dfcbc7a788958"
+  integrity sha1-dhS3YnEPpyYoFrtagX38vHp4iVg=
   dependencies:
     body-parser "^1.19.0"
     express "^4.17.1"
@@ -1776,12 +1776,12 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-bcrypt@3.0.5, bcrypt@^3.0.4, bcrypt@^3.0.6:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/bcrypt/-/bcrypt-3.0.5.tgz#37a296c48ebf39fe6b28e4da3a221bf80da5aa26"
-  integrity sha512-m4o91nB+Ce8696Ao4R3B/WtVWTc1Lszgd098/OIjU9D/URmdYwT3ooBs9uv1b97J5YhZweTq9lldPefTYZ0TwA==
+bcrypt@3.0.6, bcrypt@^3.0.4, bcrypt@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.npm.taobao.org/bcrypt/download/bcrypt-3.0.6.tgz#f607846df62d27e60d5e795612c4f67d70206eb2"
+  integrity sha1-9geEbfYtJ+YNXnlWEsT2fXAgbrI=
   dependencies:
-    nan "2.13.1"
+    nan "2.13.2"
     node-pre-gyp "0.12.0"
 
 bcryptjs@2.3.0:
@@ -3448,10 +3448,10 @@ faye-websocket@^0.10.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fibers@3.1.1, fibers@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/fibers/-/fibers-3.1.1.tgz#0238902ca938347bd779523692fbeefdf4f688ab"
-  integrity sha512-dl3Ukt08rHVQfY8xGD0ODwyjwrRALtaghuqGH2jByYX1wpY+nAnRQjJ6Dbqq0DnVgNVQ9yibObzbF4IlPyiwPw==
+fibers@3.1.1, fibers@^3.1.1, fibers@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.npm.taobao.org/fibers/download/fibers-4.0.3.tgz#dda5918280a48507f5d8a96dd9a525e8f4a532e2"
+  integrity sha1-3aWRgoCkhQf12Klt2aUl6PSlMuI=
   dependencies:
     detect-libc "^1.0.3"
 
@@ -5270,10 +5270,10 @@ mz@^2.4.0:
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
 
-nan@2.13.1:
-  version "2.13.1"
-  resolved "https://registry.yarnpkg.com/nan/-/nan-2.13.1.tgz#a15bee3790bde247e8f38f1d446edcdaeb05f2dd"
-  integrity sha512-I6YB/YEuDeUZMmhscXKxGgZlFnhsn5y0hgOZBadkzfTRrZBtJDZeg6eQf7PYMIEclwmorTKK8GztsyOUSVBREA==
+nan@2.13.2:
+  version "2.13.2"
+  resolved "https://registry.npm.taobao.org/nan/download/nan-2.13.2.tgz#f51dc7ae66ba7d5d55e1e6d4d8092e802c9aefe7"
+  integrity sha1-9R3Hrma6fV1V4ebU2AkugCya7+c=
 
 nan@^2.0.8, nan@^2.12.1:
   version "2.14.1"
