@@ -42,40 +42,8 @@ list_views:
 
 relatedList:
   - purchase_requisitions_lines
-  - objectName: purchase_quotations 
-    columns: 
-      - state
-      - name
-      - partner_id
-      - quotation_date
-      - amount_untaxed
-      - amount_total
-      - owner
-    filters: !!js/function | 
-      function(parentRecord) {
-        var id = parentRecord._id;
-        return [["requisition_id","=",id]]
-      }
-    sort: 
-      - - date_order
-        - asc
-  - objectName: purchase_orders 
-    columns: 
-      - state
-      - name
-      - partner_id
-      - order_date
-      - amount_untaxed
-      - amount_total
-      - owner
-    filters: !!js/function | 
-      function(parentRecord) {
-        var id = parentRecord._id;
-        return [["requisition_id","=",id]]
-      }
-    sort: 
-      - - date_order
-        - asc
+  - purchase_quotations
+  - purchase_orders 
 
 actions:
   printPR: 
