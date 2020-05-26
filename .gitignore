@@ -13,3 +13,6 @@
 **/.vscode/launch.*
 
 .DS_Store
+
+isolate-*.log
+.env.local
