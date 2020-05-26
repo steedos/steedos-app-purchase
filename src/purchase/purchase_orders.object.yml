@@ -71,7 +71,6 @@ list_views:
   all:
     label: 所有采购订单
     columns:
-      - state
       - name
       - partner_id
       - created
@@ -80,6 +79,7 @@ list_views:
       - amount_untaxed
       - amount_total
       - owner
+      - state
   waiting:
     label: 待验收
     filters: [["state", "=", "waiting"]]

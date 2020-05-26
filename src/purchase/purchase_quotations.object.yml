@@ -73,7 +73,6 @@ list_views:
   all:
     label: 所有询价报价
     columns:
-      - state
       - name
       - partner_id
       - created
@@ -82,21 +81,21 @@ list_views:
       - amount_untaxed
       - amount_total
       - owner
+      - state
   rfq:
     label: 待报价
     filters: [["state", "=", "RFQ"]]
     columns:
-      - state
       - name
       - partner_id
       - created
       - amount_qty
       - owner
+      - state
   quoting:
     label: 报价中
     filters: [["state", "=", "quoting"]]
     columns:
-      - state
       - name
       - partner_id
       - created
@@ -104,11 +103,11 @@ list_views:
       - amount_untaxed
       - amount_total
       - owner
+      - state
   quoted:
     label: 已报价
     filters: [["state", "=", "quoted"]]
     columns:
-      - state
       - name
       - partner_id
       - created
@@ -117,11 +116,11 @@ list_views:
       - amount_untaxed
       - amount_total
       - owner
+      - state
   my_quoting:
     label: 我的报价单：报价中
     filters: [["state", "=", "quoting"]]
     columns:
-      - state
       - name
       - partner_id
       - created
@@ -129,11 +128,11 @@ list_views:
       - amount_untaxed
       - amount_total
       - owner
+      - state
   my_quoted:
     label: 我的报价单：已报价
     filters: [["state", "=", "quoted"]]
     columns:
-      - state
       - name
       - partner_id
       - created
@@ -142,25 +141,10 @@ list_views:
       - amount_untaxed
       - amount_total
       - owner
+      - state
 relatedList:
   - purchase_quotations_lines
-  - objectName: purchase_orders 
-    columns: 
-      - state
-      - name
-      - partner_id
-      - order_date
-      - amount_untaxed
-      - amount_total
-      - owner
-    filters: !!js/function | 
-      function(parentRecord) {
-        var id = parentRecord._id;
-        return [["quotation_id","=",id]]
-      }
-    sort: 
-      - - date_order
-        - asc
+  - purchase_orders 
 actions:
   #printRFQ: 
   #    label: "打印询价单" 

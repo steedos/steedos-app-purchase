@@ -34,11 +34,11 @@ list_views:
   all:
     label: 所有
     columns:
-      - state
       - name
       - created
       - amount_qty
       - owner
+      - state
 
 relatedList:
   - purchase_requisitions_lines
