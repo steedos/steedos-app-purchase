@@ -16,3 +16,5 @@
 
 isolate-*.log
 .env.local
+
+storage/**
