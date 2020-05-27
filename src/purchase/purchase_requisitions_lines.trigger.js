@@ -11,6 +11,8 @@ getObject: function(object_name: string)
 query: 查询数据相关参数[json], //仅beforeFind时存在此属性
 */
 
+const prManager = require('./purchase_requisitions.manager');
+
 module.exports = {
   listenTo: 'purchase_requisitions_lines',
   beforeInsert: async function () {
@@ -31,5 +33,18 @@ module.exports = {
     doc.product_code = product.code || '';
     doc.product_description = product.description || '';
     doc.unit = product.unit || '';
-  }
+  },
+
+  afterInsert: async function () {
+    await prManager.caculateAmount(this.doc.parent_id);
+  },
+
+  afterUpdate: async function () {
+    await prManager.caculateAmount(this.doc.parent_id);
+  },
+
+  afterDelete: async function () {
+    await prManager.caculateAmount(this.previousDoc.parent_id);
+  },
+
 }
