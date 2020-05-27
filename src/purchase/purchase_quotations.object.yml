@@ -69,6 +69,10 @@ fields:
     type: number
     label: 合计数量
     omit: true
+  owner:
+    label: 对方销售员
+    omit: false
+    hidden: false
 list_views:
   all:
     label: 所有询价报价
