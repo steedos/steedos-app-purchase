@@ -26,13 +26,13 @@ fields:
       - label: 分析师
         value: Analyst
       - label: 竞争者
-        value: Competitor	
+        value: Competitor
       - label: 顾客
-        value: Customer		
+        value: Customer
       - label: 集成商
         value: Integrator
       - label: 投资者
-        value: Investor	
+        value: Investor
       - label: 合作伙伴
         value: Partner
       - label: 新闻界
