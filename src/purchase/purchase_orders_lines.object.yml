@@ -10,6 +10,7 @@ fields:
     sortable: true
     filterable: true
     searchable: true
+    required: true
   product_id:
     label: 物料
     type: lookup
@@ -17,6 +18,7 @@ fields:
     sortable: true
     filterable: true
     searchable: true
+    required: true
   product_code:
     type: text
     label: 物料编码

@@ -19,6 +19,7 @@ fields:
     sortable: true
     filterable: true
     searchable: true
+    required: true
     #omit: true
   quotation_id:
     label: 采购报价
@@ -27,6 +28,7 @@ fields:
     sortable: true
     filterable: true
     searchable: true
+    required: true
   partner_id:
     label: 供应商
     type: lookup
@@ -34,6 +36,7 @@ fields:
     sortable: true
     filterable: true
     searchable: true
+    required: true
   state:
     label: 状态
     type: select
@@ -47,6 +50,7 @@ fields:
         value: return
     filterable: true
     defaultValue: waiting
+    required: true
   order_date: 
     type: date
     label: 订单日期

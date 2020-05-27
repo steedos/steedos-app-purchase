@@ -27,6 +27,7 @@ fields:
         value: sent
     defaultValue: draft
     filterable: true
+    required: true
   note:
     type: textarea
     label: 需求说明

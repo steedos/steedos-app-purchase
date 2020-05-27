@@ -21,6 +21,7 @@ fields:
     sortable: true
     filterable: true
     searchable: true
+    required: true
   partner_id:
     label: 供应商
     type: lookup
@@ -28,6 +29,7 @@ fields:
     sortable: true
     filterable: true
     searchable: true
+    required: true
   state:
     label: 状态
     type: select
@@ -45,6 +47,7 @@ fields:
         value: cancel
     filterable: true
     defaultValue: RFQ
+    required: true
   quotation_date: 
     type: date
     label: 报价日期
@@ -73,6 +76,7 @@ fields:
     label: 对方销售员
     omit: false
     hidden: false
+    required: true
 list_views:
   all:
     label: 所有询价报价
