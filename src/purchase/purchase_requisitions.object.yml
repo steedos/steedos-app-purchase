@@ -38,7 +38,7 @@ fields:
     type: select
     label: 审批状态
     searchable: true
-    omit: false
+    omit: true
     hidden: false
   owner:
     label: 编制
