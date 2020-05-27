@@ -1,6 +1,6 @@
 name: purchase_orders_lines
 label: 采购订单明细
-icon: contact
+icon: record
 enable_api: true
 fields:
   parent_id:
