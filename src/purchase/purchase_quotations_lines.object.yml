@@ -1,6 +1,6 @@
 name: purchase_quotations_lines
 label: 询价报价明细
-icon: record
+icon:  lead_list
 enable_api: true
 enable_audit: true
 fields:

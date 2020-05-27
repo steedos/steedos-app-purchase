@@ -49,6 +49,7 @@ list_views:
     columns:
       - name
       - created
+      - note
       - amount_qty
       - owner
       - state

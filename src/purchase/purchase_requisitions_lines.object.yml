@@ -1,6 +1,6 @@
 name: purchase_requisitions_lines
 label: 采购需求明细
-icon: record
+icon: lead_list
 enable_api: true
 fields:
   parent_id:
