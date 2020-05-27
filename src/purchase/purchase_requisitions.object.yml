@@ -28,9 +28,10 @@ fields:
     defaultValue: draft
     filterable: true
   note:
-    type: text
-    label: 备注
+    type: textarea
+    label: 需求说明
     is_wide: true
+    rows: 4
   owner:
     label: 编制
 
