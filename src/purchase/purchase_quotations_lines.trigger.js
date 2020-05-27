@@ -21,7 +21,8 @@ module.exports = {
   },
 
   afterUpdate: async function () {
-    await pqManager.caculateAmount(this.doc.parent_id);
+    let doc = await this.getObject('purchase_quotations_lines').findOne(this.id, { fields: ['parent_id'] });
+    await pqManager.caculateAmount(doc.parent_id);
   },
 
   afterDelete: async function () {
