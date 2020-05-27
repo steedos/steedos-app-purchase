@@ -8,6 +8,15 @@ module.exports = {
     datasource_name: 数据源名称[string],
     getObject: function(object_name: string)
   */
+
+  beforeInsert: async function () {
+    let doc = this.doc;
+    if (doc.requisition_id) {
+      let pr = await this.getObject('purchase_requisitions').findOne(doc.requisition_id);
+      doc.amount_qty = pr.amount_qty;
+    }
+  },
+
   afterInsert: async function () {
     let doc = this.doc;
     let id = doc._id;
