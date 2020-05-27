@@ -2,6 +2,7 @@ name: purchase_requisitions
 label: 采购需求
 icon: contact
 enable_api: true
+enable_workflow: true
 fields:
   name:
     type: autonumber
