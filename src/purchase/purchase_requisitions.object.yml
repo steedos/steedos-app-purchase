@@ -36,6 +36,12 @@ fields:
     rows: 2
   owner:
     label: 编制
+  instance_state:
+    type: select
+    label: 审批状态
+    searchable: true
+    omit: false
+    hidden: false
 
 list_views:
   all:
