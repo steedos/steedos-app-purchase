@@ -40,7 +40,8 @@ module.exports = {
   },
 
   afterUpdate: async function () {
-    await prManager.caculateAmount(this.doc.parent_id);
+    let doc = await this.getObject('purchase_requisitions_lines').findOne(this.id, { fields: ['parent_id'] });
+    await prManager.caculateAmount(doc.parent_id);
   },
 
   afterDelete: async function () {
