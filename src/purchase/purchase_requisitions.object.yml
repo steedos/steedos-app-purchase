@@ -27,6 +27,10 @@ fields:
         value: sent
     defaultValue: draft
     filterable: true
+  note:
+    type: text
+    label: 备注
+    is_wide: true
   owner:
     label: 编制
 
