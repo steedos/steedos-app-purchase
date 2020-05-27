@@ -1,6 +1,6 @@
 name: products
 label: 物料
-icon: contact
+icon: fulfillment_order
 enable_api: true
 fields:
   name:

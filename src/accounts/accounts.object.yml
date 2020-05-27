@@ -1,6 +1,6 @@
 name: accounts
 label: 业务伙伴
-icon: account
+icon: partners
 enable_files: true
 enable_search: true
 enable_events: true

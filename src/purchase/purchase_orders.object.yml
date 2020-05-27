@@ -1,6 +1,6 @@
 name: purchase_orders
 label: 采购订单
-icon: contact
+icon: contract
 enable_api: true
 fields:
   name:

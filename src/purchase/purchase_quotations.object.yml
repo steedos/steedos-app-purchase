@@ -1,6 +1,6 @@
 name: purchase_quotations
 label: 询价报价
-icon: contact
+icon: sales_channel
 enable_api: true
 enable_audit: true
 enable_files: true
