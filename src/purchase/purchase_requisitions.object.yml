@@ -13,10 +13,6 @@ fields:
     index: true
     omit: true
     readonly: true
-  amount_qty:
-    type: number
-    label: 合计数量
-    omit: true
   state:
     label: 状态
     type: select
@@ -34,14 +30,18 @@ fields:
     label: 需求说明
     is_wide: true
     rows: 2
-  owner:
-    label: 编制
+  amount_qty:
+    type: number
+    label: 合计数量
+    omit: true
   instance_state:
     type: select
     label: 审批状态
     searchable: true
     omit: false
     hidden: false
+  owner:
+    label: 编制
 
 list_views:
   all:
