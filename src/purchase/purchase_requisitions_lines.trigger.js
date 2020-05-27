@@ -26,13 +26,12 @@ module.exports = {
   },
   beforeUpdate: async function () {
     var doc = this.doc;
-    let product = {};
     if (doc.product_id) {
-      product = await this.getObject('products').findOne(doc.product_id);
+      let product = await this.getObject('products').findOne(doc.product_id);
+      doc.product_code = product.code || '';
+      doc.product_description = product.description || '';
+      doc.unit = product.unit || '';
     }
-    doc.product_code = product.code || '';
-    doc.product_description = product.description || '';
-    doc.unit = product.unit || '';
   },
 
   afterInsert: async function () {
