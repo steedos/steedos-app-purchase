@@ -93,7 +93,10 @@ list_views:
     filters: [["state", "=", "accepted"]]
   return:
     label: 退换处理中
-    filters: [["state", "=", "return"]]
+    filters: [["state", "=", "return"]]   
+relatedList:
+  - purchase_orders_lines
+  - cms_files 
 actions:
   initiateAcceptance: 
       label: "发起验收" 

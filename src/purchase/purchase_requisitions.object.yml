@@ -57,9 +57,9 @@ list_views:
 
 relatedList:
   - purchase_requisitions_lines
+  - cms_files 
   - purchase_quotations
   - purchase_orders 
-  - cms_files 
 
 actions:
   printPR: 
