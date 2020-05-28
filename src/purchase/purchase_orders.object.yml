@@ -2,6 +2,7 @@ name: purchase_orders
 label: 采购订单
 icon: contract
 enable_api: true
+enable_files: true
 fields:
   name:
     type: autonumber

@@ -3,6 +3,7 @@ label: 采购需求
 icon: job_profile
 enable_api: true
 enable_workflow: true
+enable_files: true
 fields:
   name:
     type: autonumber
