@@ -2,6 +2,7 @@ name: products
 label: 物料
 icon: fulfillment_order
 enable_api: true
+enable_files: true
 fields:
   name:
     type: text
