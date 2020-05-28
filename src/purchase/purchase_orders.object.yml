@@ -102,9 +102,9 @@ actions:
       label: "发起验收" 
 permission_set:
   user:
-    allowCreate: false
-    allowDelete: false
-    allowEdit: false
+    allowCreate: true
+    allowDelete: true
+    allowEdit: true
     allowRead: true
     modifyAllRecords: false
     viewAllRecords: true 
