@@ -152,9 +152,9 @@ list_views:
       - state
 relatedList:
   - purchase_quotations_lines
-  - purchase_orders  
   - cms_files 
-  
+  - purchase_orders  
+
 actions:
   #printRFQ: 
   #    label: "打印询价单" 
