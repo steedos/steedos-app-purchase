@@ -12,3 +12,28 @@ objects:
   - instances
   - tasks
   - events
+mobile_objects: 
+  - purchase_requisitions
+  - purchase_quotations
+  - purchase_orders
+  - accounts
+  - products
+  - instances
+  - tasks
+  - events
+  
+admin_menus:
+  - _id: object_manager
+    name: Object Manager
+    permission_sets:
+      - admin
+    object_name: objects
+    parent: menu_advanced
+    sort: 1
+  - _id: datasources_manager
+    name: Datasources
+    permission_sets:
+      - admin
+    object_name: datasources
+    parent: menu_advanced
+    sort: 2
