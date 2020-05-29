@@ -6,7 +6,7 @@
  - 发起采购需求的审批流程
  - 生成询价报价单
 
- ![采购需求](./img/采购需求.png)
+ ![采购需求](http://oss.steedos.com/images/steedos-app-purchase/%E9%87%87%E8%B4%AD%E9%9C%80%E6%B1%82.png)
 
 #### 询价报价
 
