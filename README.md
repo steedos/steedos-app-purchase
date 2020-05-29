@@ -6,7 +6,7 @@
  - 发起采购需求的审批流程
  - 生成询价报价单
 
- ![采购需求](./img/采购需求.png)
+ ![采购需求](https://www-steedos-com.oss-cn-beijing.aliyuncs.com/images/steedos-app-purchase/purchase_requisitions.png)
 
 #### 询价报价
 
@@ -17,7 +17,9 @@
  - 发起采购申请的审批流程
  - 生成采购订单
 
- ![询价报价](./img/询价报价.png)
+ ![询价报价](https://www-steedos-com.oss-cn-beijing.aliyuncs.com/images/steedos-app-purchase/purchase_quotations.png
+)
+
 
 #### 采购订单
 
@@ -25,7 +27,8 @@
  - 管理采购订单
  - 发起采购验收流程
 
- ![采购订单](./img/采购订单.png)
+ ![采购订单](
+https://www-steedos-com.oss-cn-beijing.aliyuncs.com/images/steedos-app-purchase/purchase_orders.png)
 
 #### 采购审批
 
@@ -43,7 +46,8 @@
  - 管理物料
  - 管理供应商
 
- ![设置](./img/设置-供应商.png)
+ ![设置](URL
+https://www-steedos-com.oss-cn-beijing.aliyuncs.com/images/steedos-app-purchase/accounts.png)
 
 ### 系统安装
 
