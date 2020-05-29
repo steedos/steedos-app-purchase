@@ -46,8 +46,7 @@ https://www-steedos-com.oss-cn-beijing.aliyuncs.com/images/steedos-app-purchase/
  - 管理物料
  - 管理供应商
 
- ![设置](URL
-https://www-steedos-com.oss-cn-beijing.aliyuncs.com/images/steedos-app-purchase/accounts.png)
+ ![设置](https://www-steedos-com.oss-cn-beijing.aliyuncs.com/images/steedos-app-purchase/accounts.png)
 
 ### 系统安装
 
