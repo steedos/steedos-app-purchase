@@ -56,3 +56,11 @@ permission_set:
     allowRead: true
     modifyAllRecords: true
     viewAllRecords: true
+  supplier:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: true
+    unreadable_fields: ['price','description','product_category'] 
