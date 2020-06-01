@@ -127,7 +127,7 @@ list_views:
       - state
   my_quoting:
     label: 我的报价单：报价中
-    filters: [["state", "=", "quoting"]]
+    filters: [["state", "=", "quoting"],["owner", "=", "{userId}"]]
     columns:
       - name
       - partner_id
@@ -139,7 +139,7 @@ list_views:
       - state
   my_quoted:
     label: 我的报价单：已报价
-    filters: [["state", "=", "quoted"]]
+    filters: [["state", "=", "quoted"],["owner", "=", "{userId}"]]
     columns:
       - name
       - partner_id
@@ -176,6 +176,8 @@ permission_set:
     allowRead: true
     modifyAllRecords: false
     viewAllRecords: true 
+    disabled_list_views: ['my_quoting','my_quoted'] 
+    disabled_actions: ['confirmQuotation'] 
   admin:
     allowCreate: true
     allowDelete: true
@@ -183,3 +185,14 @@ permission_set:
     allowRead: true
     modifyAllRecords: true
     viewAllRecords: true
+    disabled_list_views: ['my_quoting','my_quoted'] 
+    disabled_actions: ['confirmQuotation'] 
+  supplier:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: false
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false 
+    disabled_list_views: ['all','rfq','quoting','quoted'] 
+    disabled_actions: ['standard_edit','openQuotation','exportPR'] 

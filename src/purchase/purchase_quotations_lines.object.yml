@@ -116,3 +116,11 @@ permission_set:
     allowRead: true
     modifyAllRecords: true
     viewAllRecords: true
+  supplier:
+    allowCreate: false
+    allowDelete: false
+    allowEdit: true
+    allowRead: true
+    modifyAllRecords: false
+    viewAllRecords: false 
+    uneditable_fields:  ['parent_id','product_id','product_code','unit','product_qty','purchaser_note'] 
