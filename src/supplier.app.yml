@@ -1,0 +1,9 @@
+_id: supplier
+name: 供应商门户
+description: 询价报价单、任务、日程。
+icon_slds: sales_channel
+is_creator: true
+objects: 
+  - purchase_quotations
+  - tasks
+  - events
