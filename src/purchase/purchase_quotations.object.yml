@@ -196,3 +196,40 @@ permission_set:
     viewAllRecords: false 
     disabled_list_views: ['all','rfq','quoting','quoted'] 
     disabled_actions: ['standard_edit','openQuotation','exportPR'] 
+
+form:
+  validate: !!js/function |
+    function(formValues){
+      if(formValues && formValues.partner_id){
+        
+        options = { $select: 'user' };
+        queryFilters = ["account", "=", formValues.partner_id];
+        var steedosFilters = require("@steedos/filters");
+        var odataFilter = steedosFilters.formatFiltersToODataQuery(queryFilters);
+        options.$filter = odataFilter;
+        var contactUsers = Creator.odata.query('contacts', options, true);
+        var contactUser = "";
+        contactUsers.forEach(function (item) {
+          if (item.user){
+            contactUser = item.user
+          }     
+        });
+
+        if(contactUser){
+          options2 = { $select: 'name' };
+          queryFilters2 = ["user", "=", contactUser];
+          var odataFilter2 = steedosFilters.formatFiltersToODataQuery(queryFilters2);
+          options2.$filter = odataFilter2;
+          var Users = Creator.odata.query('space_users', options2, true);
+          var contactUserName = "";
+          Users.forEach(function (item) {
+            if (item.name){
+              contactUserName = item.name
+            }    
+          });
+          $("div.selectUser-box").text(contactUserName);
+          $("[name='owner']").attr("data-values",contactUser);
+          
+        }
+      }
+    }
