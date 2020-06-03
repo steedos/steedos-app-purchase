@@ -1,6 +1,6 @@
 _id: purchase
 name: 采购
-description: 采购全过程管理，包括需求、询价、报价、订单以及审批、统计等。
+description: 审批、文档、公告、通讯录、任务、日程。
 icon_slds: approval
 is_creator: true
 objects: 
@@ -12,7 +12,16 @@ objects:
   - instances
   - tasks
   - events
-  - reports 
+mobile_objects: 
+  - purchase_requisitions
+  - purchase_quotations
+  - purchase_orders
+  - accounts
+  - products
+  - instances
+  - tasks
+  - events
+  
 admin_menus:
   - _id: object_manager
     name: Object Manager
