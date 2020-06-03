@@ -73,7 +73,7 @@ fields:
     label: 合计数量
     omit: true
   owner:
-    label: 对方销售员
+    label: 供方销售员
     omit: false
     hidden: false
     required: true
