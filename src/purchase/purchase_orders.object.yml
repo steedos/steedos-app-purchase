@@ -99,7 +99,8 @@ relatedList:
   - cms_files 
 actions:
   initiateAcceptance: 
-      label: "发起验收" 
+    label: "发起验收" 
+    on: "record" 
 permission_set:
   user:
     allowCreate: true

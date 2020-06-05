@@ -161,13 +161,20 @@ actions:
   #emailRFQ: 
   #    label: "发送邮件" 
   openQuotation: 
-      label: "通知供应商" 
+    label: "通知供应商"
+    on: "record" 
+    sort: 30
   #printPQ: 
   #    label: "打印报价单" 
   confirmQuotation: 
-      label: "报价完成"
+    label: "报价完成"
+    on: "record"
+    sort: 50
   exportPR: 
-      label: "生成采购申请单"        
+    label: "生成采购申请单"
+    on: "record" 
+    sort: 60    
+      
 permission_set:
   user:
     allowCreate: true

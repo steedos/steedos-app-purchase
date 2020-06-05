@@ -63,7 +63,8 @@ relatedList:
 
 actions:
   printPR: 
-      label: "打印需求单"
+    label: "打印需求单"
+    on: "record"
 
 permission_set:
   user:
