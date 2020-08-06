@@ -7,9 +7,9 @@ objects:
   - purchase_requisitions
   - purchase_quotations
   - purchase_orders
+  - instances
   - accounts
   - products
-  - instances
   - tasks
   - events
   - reports
