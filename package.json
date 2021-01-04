@@ -1,5 +1,5 @@
 {
-    "name": "test2",
+    "name": "@steedos/steedos-app-purchase",  
     "version": "0.0.1",
     "description": "",
     "main": "server.js",
@@ -11,12 +11,11 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@steedos/accounts": "^1.22.0-alpha.4",
+        "@steedos/accounts": "^1.23.0-alpha.11",
+        "@steedos/metadata-api": "^1.23.0-alpha.9",
         "@steedos/steedos-plugin-workflow": "^2.0.10",
         "dotenv-flow": "^3.1.0",
-        "mssql": "^6.2.0",
-        "mysql": "^2.18.1",
-        "steedos-server": "^1.22.0-alpha.4"
+        "steedos-server": "^1.23.0-alpha.11"
     },
     "devDependencies": {
         "nodemon": "^1.19.1"

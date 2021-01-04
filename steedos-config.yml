@@ -4,11 +4,13 @@ datasources:
       url: ${MONGO_URL}
     objectFiles: 
       - "./src/**"
+      - "./steedos-app/**"
 public:
   cfs:
     store: "local"
     local: 
       folder: "./storage"
+  templateSpaceId: 'template'
 email:
   host:
   port: 465
@@ -25,9 +27,11 @@ tenant:
   enable_forget_password: false
   enable_create_tenant: true
   enable_password_login: true
+  enable_mobile_code_login: false
   enable_bind_email: false
   enable_bind_mobile: false
 plugins:
   - "@steedos/accounts"
+  - "@steedos/metadata-api"
 cron:
   instancerecordqueue_interval: 10000
