@@ -56,6 +56,10 @@ fields:
     type: date
     label: 订单日期
     omit: true
+  expected_arrival_date:
+    type: date
+    label: 预计交货日期
+    description: 供应商承诺的预计到货日期
   amount_untaxed:
     label: 未税金额
     type: currency
@@ -80,6 +84,7 @@ list_views:
       - partner_id
       - created
       - order_date
+      - expected_arrival_date
       - amount_qty
       - amount_untaxed
       - amount_total
