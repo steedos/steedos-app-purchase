@@ -56,6 +56,23 @@ fields:
     type: date
     label: 订单日期
     omit: true
+  payment_terms:
+    type: select
+    label: 付款条件
+    description: 采购付款方式和账期
+    options:
+      - label: 预付30%，货到付70%
+        value: prepaid_30
+      - label: 月结30天
+        value: net_30
+      - label: 月结60天
+        value: net_60
+      - label: 月结90天
+        value: net_90
+      - label: 货到付款
+        value: cod
+      - label: 票到付款
+        value: pay_after_invoice
   amount_untaxed:
     label: 未税金额
     type: currency
@@ -80,6 +97,7 @@ list_views:
       - partner_id
       - created
       - order_date
+      - payment_terms
       - amount_qty
       - amount_untaxed
       - amount_total
