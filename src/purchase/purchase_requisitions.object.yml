@@ -26,6 +26,10 @@ fields:
     defaultValue: draft
     filterable: true
     required: true
+  required_date:
+    type: date
+    label: 需求日期
+    description: 内部部门需求的到货日期
   note:
     type: textarea
     label: 需求说明
@@ -50,6 +54,7 @@ list_views:
     columns:
       - name
       - created
+      - required_date
       - note
       - amount_qty
       - owner
